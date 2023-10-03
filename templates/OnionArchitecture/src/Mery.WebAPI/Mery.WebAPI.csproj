@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mery.Application\Mery.Application.csproj" />
+    <ProjectReference Include="..\Mery.Infrastructure\Mery.Infrastructure.csproj" />
+  </ItemGroup>
+
+
+</Project>

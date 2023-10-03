@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Mery",
+  "classifications": [
+    "Common",
+    "Console",
+    "Service",
+    "Web"
+  ],
+  "identity": "MerySoft.WebTemplate.CSharp",
+  "name": "Mery Corporation Web Application",
+  "shortName": "MeryWebApp",
+  "defaultName": "OnionArch",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "mery.corp.sln",
+  "preferNameDirectory": true,
+  "guids": [
+    "0583965E-6EF8-4443-8D20-67E2E87CCFC8",
+    "15400FC3-9632-4CF1-B86A-0CD98104BA56",
+    "825AF514-26C9-4506-917C-A34593EDD977",
+    "356E70F7-FD48-4CE9-BECE-1D8E5CF7F585",
+    "901A5192-D870-43DB-90F6-79282FCEDE3B",
+    "540FED48-5E12-4A2F-8545-FB68654673B4",
+    "BECAEAED-387C-48DE-B3F6-FE509EF81695",
+    "B94BECA1-1AF7-46B7-BFCF-18F255EF353A",
+    "496F6F43-BDA8-4FDD-A22B-BF36916F160D",
+    "35B8AEFE-D6B8-40E6-9FAE-839487EB0208"
+
+  ],
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "netcoreapp3.1",
+          "description": "Target netcoreapp2.1"
+        },
+        {
+          "choice": "netcoreapp3.1",
+          "description": "Target netcoreapp3.1"
+        }
+      ],
+      "replaces": "netcoreapp3.1",
+      "defaultValue": "netcore3.1"
+    },
+    "AuthorName": {
+      "type": "parameter",
+      "defaultValue": "(insert author name)",
+      "replaces": "AuthorName",
+      "datatype": "text",
+      "description": "Author name"
+    },
+    "Description": {
+      "type": "parameter",
+      "description": "Description text that will be shown for this nuget package on nuget.org",
+      "defaultValue": "(insert description)",
+      "replaces": "DescriptionContent"
+    },
+    "HostIdentifier": {
+      "type": "bind",
+      "binding": "HostIdentifier"
+    }
+  },
+  "constraints": {
+    "windows-only": {
+      "type": "os",
+      "args": "Windows"
+    },
+    "linux-and-osx": {
+      "type": "os",
+      "args": [
+        "Linux",
+        "OSX"
+      ]
+    },
+    "sdk-only": {
+      "type": "host",
+      "args": [
+        {
+          "hostname": "dotnetcli",
+          "version": "[3.0,)"
+        },
+        {
+          "hostname": "vs"
+        }
+      ]
+    }
+  },
+  "LTS ": {
+    "type": "sdk-version",
+    "args": [
+      "6.0.*",
+      "3.1.*"
+    ]
+  },
+  "sources": [
+    {
+      "condition": "(HostIdentifier == \"dotnetcli\" ||  HostIdentifier == \"dotnetcli-preview\")",
+      "rename": {
+        "mery.corp.sln": "mery.corp.sln"
+      }
+    }
+  ]
+}
