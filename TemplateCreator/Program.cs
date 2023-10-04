@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("try gpg ksey yy");
+            Console.WriteLine("try gpg ksey");
         }
     }
 }
